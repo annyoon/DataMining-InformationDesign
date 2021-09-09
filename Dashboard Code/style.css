@@ -1,0 +1,131 @@
+body {
+  background-color: #b9c2e06e
+}
+
+.select-box {
+  float: left;
+  background-color: white;
+  border-radius: 7px;
+  width: 100px;
+  padding: 10px;
+  margin: 20px auto 0px 20px;
+  text-align: center;
+}
+
+.info {
+  float: left;
+  clear: left;
+  background-color: white;
+  border-radius: 7px;
+  width: 500px;
+  height: 300px;
+  padding: 25px;
+  margin: 5px auto 20px 20px;
+}
+
+.barplot {
+  position: absolute;
+  left: 570px;
+  background-color: white;
+  border-radius: 7px;
+  padding: 15px;
+  width: 720px;
+  margin: 20px 20px 0px 20px;
+}
+
+.time-number {
+  position: absolute;
+  top: 280px;
+  left: 570px;
+  background-color: white;
+  border-radius: 7px;
+  padding: 15px;
+  width: 720px;
+  margin: -4px 20px 0px 20px;
+  text-align: center;
+}
+
+.lineplot {
+  position: absolute;
+  top: 330px;
+  left: 570px;
+  border-radius: 7px;
+  background-color: white;
+  padding: 15px;
+  width: 720px;
+  margin: 20px auto 0px 20px;
+}
+
+.lint-text{
+  font-size: 15px;
+}
+
+.scatterplot {
+  position: absolute;
+  top: 625px;
+  left: 570px;
+  border-radius: 7px;
+  background-color: white;
+  padding: 15px;
+  width: 400px;
+  margin: 20px auto 20px 20px;
+}
+
+.grid line {
+  stroke: #CBCBCB;
+  stroke-opacity: 0.8;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.tooltip-bar {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.term {
+  position: absolute;
+  top: 625px;
+  left: 1020px;
+  background-color: white;
+  border-radius: 7px;
+  width: 250px;
+  padding: 25px;
+  margin: 20px auto 0px 20px;
+}
+
+.map {
+  clear: left;
+  width: 550px;
+  height: 565px;
+  margin: 20px auto 20px 20px;
+}
+
+.map-line {
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  background: #fff;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 18px;
+}
+
+.map-circle {
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  background: #fff;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 18px;
+}

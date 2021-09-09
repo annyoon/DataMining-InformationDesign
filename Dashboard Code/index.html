@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ID: 323 New Bus Dashboard</title>
+
+    <!-- d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 자바 스크립트 파일 연결 -->
+    <script type="text/javascript" src="JSgraphFunction.js"></script>
+    <script type="text/javascript" src="JSmapFunction.js"></script>
+    <script type="text/javascript" src="JSselectBoxFunction.js"></script>
+
+    <!-- select box div -->
+    <div class="select-box">
+        <h5>Select route</font>
+        </h5>
+        <form>
+            <select name="route" id="Route_ID" onchange="chageRouteSelect(this.options[this.selectedIndex].value)">
+                <option value="New1" selected>New 1번</option>
+                <option value="New2">New 406번</option>
+                <option value="New3">New 343번</option>
+            </select>
+        </form>
+    </div>
+
+    <!-- info text div -->
+    <div id="info" class="info">
+        <center>
+            <br>
+            <span1 style="font-size: 1.5em;">신규 노선 하루 총 예상 승객 수<br><br>
+                <b>약 <span id="psg">662127</span>명</b>
+            </span1><br>
+            <span style="font-size: 1em;">(전체 노선 중 상위 약 </span><span id="rnk">10.3</span>%)<br><br>
+            <span style="font-size: 1.2em;"><b>지나는 총 정류장 수 </b></span><span id="stp">54</span>개<br>
+            <span style="font-size: 1.2em;"><b>기점 </b></span><span id="stp1">쌍문역</span>
+            <span style="font-size: 1.2em;"><b> ↔ 종점 </b></span><span id="stp2">서울역버스환승센터</span><br>
+            <span style="font-size: 1.2em;"><b>운행 거리 약 </b></span><span id="dist">15.6</span>km<br><br>
+            <span style="font-size: 1.2em;"><b>설명 </b></span><span id="txt">새롭게 만든 노선</span>
+        </center>
+    </div>
+
+    <!-- bar plot div -->
+    <div class="barplot">
+        <div id="barplot"></div>
+    </div>
+    <script>
+        var newNum = "New1", n1 = 0, n2 = 23;
+        barPlotInit(); drawBarPlot(newNum, n1, n2);
+    </script>
+
+    <!-- bar plot time number div -->
+    <div class="time-number">
+        <span style="font-size: 1em;"><b>시간대 선택 </b></span>
+        <input type="number" id="begin" min="0" max="23" value="0" />
+        <span style="font-size: 1em;"> 부터 </span>
+        <input type="number" id="end" min="0" max="23" value="23" />
+        <script>
+            /* Number */
+            function setBegintime() { n1 = this.value }
+            d3.select("#begin").on("input", setBegintime)
+            function setEndtime() { n2 = this.value }
+            d3.select("#end").on("input", setEndtime)
+        </script>
+        <input type="button" value="확인" onclick="drawBarPlot(newNum, n1, n2)" />
+    </div>
+
+    <!-- line plot div -->
+    <div class="lineplot">
+        <div id="lineplot"></div>
+    </div>
+    <script> linePlotInit(); drawLinePlot("New1");</script>
+
+    <!-- scatter plot div -->
+    <div class="scatterplot">
+        <div id="scatterplot"></div>
+    </div>
+    <script> scatterPlotInit(); drawScatterPlot("New1");</script>
+
+    <!-- term text div -->
+    <div id="term" class="term">
+        <center>
+            <span style="font-size: 1.2em;">적절한 배차 간격 추천<br><br></span>
+            <span1 style="font-size: 1.8em;"><b>약 <span id="trm">7</span>분</b></span1>
+        </center>
+    </div>
+
+    <!-- map div -->
+    <div id="map" class="map"></div>
+
+    <!-- Kakao Map API JS Key -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e3b701c530ca7afea4b2dca4345ed198">
+        /* API를 사용하기 위해서 사이트 도메인이 필요하기 때문에
+        html을 열 때 반드시 링크로 열어야 함 (netlify에서 임시 도메인 발급) */
+    </script>
+
+    <script>
+        var map; // 지도 저장
+        var busArr = ["bus103", "bus106", "bus107", "bus109", "bus140", "bus150", "bus151", "bus160", "bus710"];
+        drawMap("New1", 37.60207, 127.02425, busArr);
+    </script>
+</body>
+
+</html>
